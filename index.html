@@ -12,10 +12,13 @@
 			<a class="menu-item" href="#box3">BOX 3</a>
 			<a class="menu-item" href="#box4">BOX 4</a>
 		</div>
-		<div id="box1" class="box"><p class="opis">BOX 1</p></div>
-		<div id="box2" class="box"><p class="opis">BOX 2</p></div>
-		<div id="box3" class="box"><p class="opis">BOX 3</p></div>
-		<div id="box4" class="box"><p class="opis">BOX 4</p></div>
+		<div id="box1" class="box"><p class="opis">BOX 1 - {{height}}</p></div>
+		<div id="box2" class="box"><p class="opis">BOX 2 -{{height}}</p></div>
+		<div id="box3" class="box"><p class="opis">BOX 3 -<button v-on:click="back">Back</button>{{height}}</p></div>
+		<div id="box4" class="box"><p class="opis">BOX 4 - {{height}}</p></div>
 	</div>
+	<script src="https://unpkg.com/vue@2.2.4"></script>
+	<!--<script src="https://unpkg.com/vue-scrollto"></script>-->
+	<script src="main.js"></script>
 </body>
 </html>
