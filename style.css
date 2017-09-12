@@ -65,16 +65,20 @@ body {
 }
 
 #box3 {
-	background-color: #ffe57f;
+	background-image: url('photos/2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-size: 150px;
+	color: black;
 }
 
 #box4 {
-	background-color: #5cb85c;
+	background-color: #1b1b1b;
 }
 
 
 .fade-enter-active, .fade-leave-active{
-  transition: opacity 2s
+  transition: opacity 1.5s
 }
 .fade-enter, .fade-leave-to {
   opacity: 0
