@@ -12,10 +12,64 @@
 			<a class="menu-item" href="#box3">BOX 3</a>
 			<a class="menu-item" href="#box4">BOX 4</a>
 		</div>
-		<div id="box1" class="box"><p class="opis">BOX 1 - {{height}}</p></div>
-		<div id="box2" class="box"><p class="opis">BOX 2 -{{height}}</p></div>
-		<div id="box3" class="box"><p class="opis">BOX 3 -<button v-on:click="back">Back</button>{{height}}</p></div>
-		<div id="box4" class="box"><p class="opis">BOX 4 - {{height}}</p></div>
+		<div id="box1" class="box">
+			<transition name="fade">
+				<p class="opis" v-show="currentHeight < itemHeight/2">BOX 1 - {{currentHeight}} ({{itemHeight}})Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</transition>
+		</div>
+		<div id="box2" class="box">
+			<transition name="fade">
+				<p class="opis" v-show="((currentHeight >= itemHeight/2) && (currentHeight < 1.5 * itemHeight))">BOX 2 - {{currentHeight}} ({{itemHeight}}) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</transition>
+		</div>
+		<div id="box3" class="box">
+			<transition name="fade">
+				<p class="opis" v-show="((currentHeight >= 1.5 * itemHeight) && (currentHeight < 2.5 * itemHeight))">BOX 3 - {{currentHeight}} ({{itemHeight}})Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				lorem</p>
+			</transition>
+		</div>
+		<div id="box4" class="box">
+			<transition name="fade">
+				<p class="opis" v-show="((currentHeight >= 2.5 * itemHeight) && (currentHeight < 4 * itemHeight))">BOX 4 - {{currentHeight}} ({{itemHeight}})Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			</transition>
+		</div>
 	</div>
 	<script src="https://unpkg.com/vue@2.2.4"></script>
 	<!--<script src="https://unpkg.com/vue-scrollto"></script>-->

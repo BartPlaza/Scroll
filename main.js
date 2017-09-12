@@ -13,13 +13,14 @@
 new Vue ({
 	el: '#container',
 	data: {
-		height: ''
+		currentHeight: '',
+		itemHeight: ''
 	},
 	methods: {
 		scrolling: function(event){
 			event.preventDefault();
 			var itemHeight = box1.offsetHeight;
-			//var height = window.pageYOffset;
+			this.itemHeight = itemHeight;
 			if(window.pageYOffset % itemHeight != 0)
 			{
 				var difference = window.pageYOffset % itemHeight;
@@ -36,16 +37,26 @@ new Vue ({
 					window.scrollBy(0, -itemHeight);
 				}
 			}
-
+			this.currentHeight = window.pageYOffset;
 		},
 		back: function(){
 			window.scrollTo(0, 0);
 		},
+		change: function(){
+			this.currentHeight = window.pageYOffset;
+        	this.itemHeight = box1.offsetHeight;
+		}
 	},
 	 created: function () {
         window.addEventListener('wheel', this.scrolling);
+        window.addEventListener('scroll', this.change);
+        var vm = this;
+        setTimeout(function(){
+        	vm.change;
+        },500);
     },
     destroyed: function () {
         window.removeEventListener('wheel', this.scrolling);
+        window.removeEventListener('scroll', this.change);
     }
 });
