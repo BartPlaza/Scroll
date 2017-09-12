@@ -25,22 +25,92 @@ new Vue ({
 			{
 				var difference = window.pageYOffset % itemHeight;
 				if(event.deltaY > 0) {
-					window.scrollBy(0, itemHeight - difference);
+					clearInterval(window.interval);
+					var height = window.pageYOffset;
+					window.interval = setInterval(function(){
+						if(window.pageYOffset < height + itemHeight - difference){
+							if((height + itemHeight - difference) - window.pageYOffset > 5){
+									window.scrollBy(0,5);
+								}else {
+									window.scrollBy(0,1);
+								}
+						}else {
+							clearInterval(window.interval);
+						}
+					}, 1);
+					//window.scrollBy(0, itemHeight - difference);
 				} else {
-					window.scrollBy(0, -difference);
+					clearInterval(window.interval);
+					var height = window.pageYOffset;
+					window.interval = setInterval(function(){
+						if(window.pageYOffset > height - difference){
+							if(window.pageYOffset - (height - difference) > 5){
+									window.scrollBy(0,-5);
+								}else {
+									window.scrollBy(0,-1);
+								}
+						}else {
+							clearInterval(window.interval);
+						}
+					}, 1);
+					//window.scrollBy(0, -difference);
 				}
 			} else
 				{
 				if(event.deltaY > 0){
-					window.scrollBy(0, itemHeight);
+					clearInterval(window.interval);
+					var height = window.pageYOffset;
+					window.interval = setInterval(function(){
+						if(window.pageYOffset < height + itemHeight){
+							if(height + itemHeight - window.pageYOffset > 5){
+								window.scrollBy(0,5);
+							}else {
+								window.scrollBy(0,1);	
+							}
+						}else {
+							clearInterval(window.interval);
+						}
+					}, 1);
+					//window.scrollBy(0, itemHeight);
 				} else {
-					window.scrollBy(0, -itemHeight);
+					clearInterval(window.interval);
+					var height = window.pageYOffset;
+					window.interval = setInterval(function(){
+						if(window.pageYOffset > height - itemHeight){
+							if(window.pageYOffset - (height - itemHeight) > 5){
+								window.scrollBy(0,-5);
+							}else{
+								window.scrollBy(0,-1);
+							}
+						}else {
+							clearInterval(window.interval);
+						}
+					}, 1);
+					//window.scrollBy(0, -itemHeight);
 				}
 			}
 			this.currentHeight = window.pageYOffset;
 		},
-		back: function(){
-			window.scrollTo(0, 0);
+		menu: function(multiplayer){
+			clearInterval(window.interval);
+			window.interval = setInterval(function(){
+						if(window.pageYOffset < multiplayer * box1.offsetHeight){
+							if(multiplayer * box1.offsetHeight - window.pageYOffset > 5){
+								window.scrollBy(0,5);
+							}else {
+								window.scrollBy(0,1);
+							}
+						}else if(window.pageYOffset > multiplayer * box1.offsetHeight){
+							if(window.pageYOffset - multiplayer * box1.offsetHeight > 5){
+								window.scrollBy(0,-5);
+							}else {
+								window.scrollBy(0,-1);
+							}
+						} else {
+							clearInterval(window.interval);
+						}
+					}, 1);
+
 		},
 		change: function(){
 			this.currentHeight = window.pageYOffset;

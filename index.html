@@ -7,19 +7,14 @@
 <body>
 	<div id="container">
 		<div id="menu">
-			<a class="menu-item" href="#box1">BOX 1</a>
-			<a class="menu-item" href="#box2">BOX 2</a>
-			<a class="menu-item" href="#box3">BOX 3</a>
-			<a class="menu-item" href="#box4">BOX 4</a>
+			<a class="menu-item" v-on:click="menu(0)">Welcome</a>
+			<a class="menu-item" v-on:click="menu(1)">BOX 2</a>
+			<a class="menu-item" v-on:click="menu(2)">BOX 3</a>
+			<a class="menu-item" v-on:click="menu(3)">BOX 4</a>
 		</div>
 		<div id="box1" class="box">
 			<transition name="fade">
-				<p class="opis" v-show="currentHeight < itemHeight/2">BOX 1 - {{currentHeight}} ({{itemHeight}})Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				<p class="opis" v-show="currentHeight < itemHeight/2">Welcome</p>
 			</transition>
 		</div>
 		<div id="box2" class="box">

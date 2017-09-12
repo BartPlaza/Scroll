@@ -1,23 +1,28 @@
 body {
 	margin: 0;
 	padding: 0;
-
+	background-color: black;
 }
 
 #container {
 	display: flex;
 	flex-direction: column;
+	max-width: 1400px;
+	margin: auto;
 }
 
 #menu {
+	height: 3em;
 	position: fixed;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	align-items: center;
 	background-color: black;	
-	padding: 10px;
-	width: 100%;	
+	width: 100%;
+	max-width: 1400px;	
 	z-index: 1;
+	opacity: 0.3;
 }
 
 .menu-item{
@@ -25,13 +30,18 @@ body {
 	color: white;
 	font-family: sans-serif;
 	font-size: 20px;
+	cursor: pointer;
+}
+
+.menu-item:hover {
+	opacity: 0.6;
 }
 
 .box {
 	height: 100vh;
 	font-family: sans-serif;
 	font-size: 40px;
-	font-size: 4vh;
+	font-size: 3vh;
 	color: white;
 	display: flex;
 	align-items: center;
@@ -44,11 +54,14 @@ body {
 }
 
 #box1 {
-	background-color: #d9534f;
+	background-image: url('photos/1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-size: 100px;
 }
 
 #box2 {
-	background-color: #5bc0de;
+	background-color: #cdccd1;
 }
 
 #box3 {
