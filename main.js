@@ -13,8 +13,8 @@
 new Vue ({
 	el: '#container',
 	data: {
-		currentHeight: '',
-		itemHeight: ''
+		currentHeight: 0,
+		itemHeight: 0
 	},
 	methods: {
 		scrolling: function(event){
